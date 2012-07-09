@@ -11,8 +11,7 @@
 
 // Require modules
 var url = require('url'),
-		express = require('express'),
-		async = require('async');
+		express = require('express');
 
 
 /*
@@ -49,6 +48,7 @@ else {
 	
 	  // Show startup messages
 		console.log(app.set('name') + " listening on port: " + port);
+		console.log('Mongo DB URI: ' + app.set('mongodb-uri'));
 		console.log('////////////////////////////////////////////////////////////');
 	});
 } 

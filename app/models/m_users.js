@@ -12,7 +12,7 @@
 exports.define = function (app) {
 
 	// Set module imports
-	var mongoose = require('mongoose'),
+	var mongoose = app.set('mongoose'),
 			crypto = require('crypto');
 	
 	// Set schema variables
@@ -92,7 +92,7 @@ exports.define = function (app) {
 	User.virtual('password')
 	  	.set(function(password) {
 	    	this._password = password;
-		    this.salt = this.makeSalt(this.user);
+		    this.salt = this.makeSalt(Math.round(Math.random() * 100000));
 		    this.hash_pw = this.encryptPassword(password);
 	  	})
 	  	.get(function() { return this._password; });
@@ -124,9 +124,9 @@ exports.define = function (app) {
 	 	return crypto.createHmac('md5', tokenSalt).digest('hex');
 	});
 	
-	User.method('setup', function(uObj, callback) {
-		if (_u.isObject(uObj)) {
-			this.modOn = Date.Now();
+	User.method('initialize', function(uObj, callback) {
+		if (uObj) {
+			this.modOn = Date.now();
 			this.un = uObj.username;
 			this.password = uObj.password;
 			this.token = this.makeToken(uObj.username);
@@ -146,7 +146,7 @@ exports.define = function (app) {
 	**********************************************************/
 	User.statics.create = function(uObj, callback) {
 		var user = new this();
-		user.setup(uObj, function(err) {
+		user.initialize(uObj, function(err) {
 			if (err) { callback(err); }
 			else { callback(null, user); }
 		});

@@ -5,8 +5,7 @@
 **********************************************************/
 
 // Require modules
-var fs = require('fs'),
-		async = require('async');
+var fs = require('fs');
 
 /*********************************************************
 * Mount routes to App

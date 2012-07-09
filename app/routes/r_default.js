@@ -4,8 +4,6 @@
 * (Default)
 *
 **********************************************************/
-var fs = require('fs');
-
 
 var mount = function (app, controller) {
 

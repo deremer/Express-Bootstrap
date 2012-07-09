@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>#name# dashboard (#environment#)</title>
+	<style type="text/css">
+	body { width: 3000px; background-color: #fdfdfd; font-family: Arial; font-size: 12px; }
+	.forms { width:300px; margin:5px; text-align:right; border-right:0px solid #aaa; padding-right: 10px; float: left;}
+	.text { float:left; width:300px; margin:5px; text-align:left; border-right:0px solid #aaa; padding: 10px; background-color: #eee; }
+	.header { background-color: #d0d0d0; margin: 0px 0 0px 0; padding: 10px;}
+	h1 { color:#000099; font-size:28px; padding: 0; margin: 0; }
+	h2 { color:#000066; font-size:20px; padding: 0; margin: 0; font-weight: bold;}
+	h3 { font-size:14px; padding: 4px 0px 0 0;  margin: 0;  font-weight: normal;}
+	h4 { font-size:12px; padding: 4px 0px 0 0;  margin: 0;  font-weight: normal;}
+	form { border: 4px solid #d0d0d0; margin-bottom: 30px;}
+	input { width: 150px; margin-right: 4px;}
+	.button { width: 70px;}
+	.section { font-weight: bold; background-color: #e0e0e0; padding: 4px; }
+	.sectionBottom { font-weight: bold; background-color: #d0d0d0; padding: 8px 4px 4px 4px; margin-top: 10px;}
+	.note { margin-left: auto; width: 150px; font-size: 9px; color: #999; margin-bottom: 3px; margin-right: 4px; text-align: left;}
+	</style>
+</head>
+<body>
+
+	<div class="forms">
+	
+		<div class="header"> 
+			<h2>Create New User</h2>
+			<h3>/users</h3>
+			<h4>(POST)</h4>
+		</div>
+		<form action="http://#domain#/users" method="POST"> 
+			<div class="section">required</div>
+			<br>
+			username: <input name="username" type="text"/><br>
+			password: <input name="password" type="text"/><br>
+			<br>
+			<div class="section">optional</div>
+			<br>
+			name: <input name="name" type="text"/><br>
+			<br>
+			<div class="sectionBottom"><input type="submit" class="button"/></div>
+		</form>
+		
+		<div class="header"> 
+			<h2>Get Users</h2>
+			<h3>/users</h3>
+			<h4>(GET)</h4>
+		</div>
+		<form action="http://#domain#/users" method="GET"> 
+			<div class="sectionBottom"><input type="submit" class="button"/></div>
+		</form>
+		
+		<div class="header"> 
+			<h2>Get User by ID</h2>
+			<h3>/users/:id/</h3>
+			<h4>(GET)</h4>
+		</div>
+		<form action="" method="GET"> 
+			<div class="section">url param</div>
+			<br>
+			USER_ID: <input name="theId" type="text"/><br>
+			<br>
+			<div class="sectionBottom"><input type="submit" class="button" onclick="this.form.action='http://#domain#/users/' + this.form.theId.value" /></div>
+		</form>
+	
+	</div>		
+
+</body>
+</html>

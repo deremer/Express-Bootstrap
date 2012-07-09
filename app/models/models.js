@@ -6,9 +6,7 @@
 **********************************************************/
 
 // Require modules
-var fs = require('fs'),
-		async = require('async'),
-		mongoose = require('mongoose');
+var fs = require('fs');
 
 /*********************************************************
 * Mount models to App

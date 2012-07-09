@@ -74,6 +74,9 @@ module.exports = function(app) {
 	
 	app.configure(function() {
 	
+		// Connect to Mongoose
+		this.set('mongoose', mongoose.connect(this.set('mongodb-uri')));
+	
 		// Connect middleware
 	  app.use(express.bodyParser());
 	  app.use(express.cookieParser(app.set('cookieSecret')));

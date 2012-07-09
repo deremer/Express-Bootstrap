@@ -15,6 +15,9 @@ Routes and controllers work together to make your app awesome.
 * Define controllers in the controllers folder with filenames following the pattern 'c_routetype.js'. Models will be passed in as the second parameter (as a convention, I use 'm' as the variable).
 * As long as your routes and controllers are named according to the pattern and share the same name (e.g., r_users.js and c_users.js), the routes and controllers will be automatically coupled.
 
+## Dashboards
+To make testing REST endpoints easy, I like to create HTML forms. Following the pattern of the users.html dashboard, create forms to interact with your RESTful endpoints. Any file name will be accessible at http://yourhost/dashboard/NAME based on the name of your dashboard file (e.g., NAME.html).
+
 ## Twitter Bootstrap
 This template comes with Twitter Bootstrap integrated. You can change the LESS files yourself, namely variables.less, and they will be dynamically re-compiled in the 'development' environment. NOTE: you need to delete 'public/styles/bootstrap.js' for the new file to be generated.
 
