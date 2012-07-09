@@ -69,7 +69,11 @@ The file structure looks like this:
 >> * **r_xxxx.js** - Create route files, following example of "r_default.js". Name file with "r_" at the beginning of the file name. Routes are bound to the app when initialized. If Routes and Controllers have the same name (after _) they will be linked.
 >> * **routes.js** - Loads all route files in the 'routes' directory and mounts the controller with the corresponding name. Don't touch this.
 
-> **view** - Views that render the data (I prefer ejs)
+> **views** - Views that render the data (I prefer ejs)
 
 >> * **bootstrap.ejs** - Loads twitter bootstrap homepage
 >> * **home.ejs** - Simple homepage template using twitter bootstrap
+
+> **dashboards** - HTML forms to test REST endpoints
+
+>> * **users.html** - A sample file. Copy and paste this into a new file and follow the HTML pattern to create new endpoints to take advantage of dynamic features. Note: that files will be accessible at http://host/dashboard/filename
